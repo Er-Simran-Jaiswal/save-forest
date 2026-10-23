@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Save the Forest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top">Save the Forest</a>
+    <nav>
+      <a href="#why">Why it matters</a><a href="#offset">Offset estimate</a><a href="#act">What you can do</a>
+      <button class="theme" id="theme" type="button" aria-label="Toggle light or dark theme">Theme</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>A forest kept is a forest we don’t have to replant.</h1>
+      <p class="lead">Forests store carbon, clean water and shelter most of the land animals on Earth. Plant a few trees below, then see what it takes to protect the real thing.</p>
+      <div class="stage"><canvas id="forest" aria-label="Interactive forest. Click or tap the ground to plant a tree."></canvas></div>
+      <div class="hud">
+        <p>Click or tap the ground to plant a tree.</p>
+        <span class="count"><span id="n">0</span> trees planted</span>
+        <span><button class="btn alt" id="clear" type="button">Clear forest</button> <button class="btn" id="fill" type="button">Plant 10 more</button></span>
+      </div>
+    </div>
+
+    <section id="why">
+      <h2>What we lose when a forest goes</h2>
+      <div class="facts">
+        <div class="fact"><div class="num">31%</div><p>of the world’s land is covered by forest, roughly 4 billion hectares.</p></div>
+        <div class="fact"><div class="num">10 million ha</div><p>of forest were lost to deforestation every year between 2015 and 2020, an area about the size of Iceland.</p></div>
+        <div class="fact"><div class="num">80%</div><p>of land-dwelling amphibian, bird and mammal species depend on forests for part of their life.</p></div>
+      </div>
+      <p class="src">Figures are rounded and based on UN Food and Agriculture Organization reporting. Check fao.org for the latest numbers.</p>
+    </section>
+
+    <section id="offset">
+      <h2>How many trees to offset your year?</h2>
+      <div class="calc">
+        <div>
+          <label for="co2">Your yearly carbon emissions: <span class="val" id="co2v">4.0</span> tonnes CO₂</label>
+          <input id="co2" type="range" min="0.5" max="20" step="0.5" value="4">
+          <p class="src" style="margin-top:.6rem">A mature tree absorbs about 22 kg of CO₂ a year. Young trees absorb much less, so treat this as a rough guide.</p>
+        </div>
+        <div class="result">
+          <div class="big" id="trees">182</div>
+          <p>mature trees needed each year</p>
+          <button class="btn" id="plantcalc" type="button">Plant them in the forest</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="act">
+      <h2>Five things that protect forests</h2>
+      <ul class="todo" id="todo"></ul>
+      <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+      <p class="barlabel" id="barlabel">0 of 5 done</p>
+    </section>
+  </main>
+
+  <footer>Save the Forest is a student-style demo page. Replace the facts, links and pledges with your own campaign details.</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
